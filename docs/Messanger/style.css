@@ -1,0 +1,231 @@
+/* Общие настройки страницы */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at bottom left, #0b0e13, #000);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200vh;
+}
+
+/* Заголовок */
+.Zag {
+    position: relative;
+    top: -200px;
+    font-size: 40px;
+    color: #00bfff;
+    text-shadow: 0 0 15px #00bfff;
+    text-align: center;
+}
+
+/* Контейнер с карточками */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+/* Карточки */
+.card {
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, black, #1f1f1f, gray);
+    background-size: 300% 300%;
+    animation: Borders 6s ease-in-out infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 20px #34343433;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #4f4f5099;
+}
+
+/* Заголовки внутри карточек */
+.card h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #585858;
+    transition: opacity 0.3s ease;
+}
+
+/* Описание */
+.card p {
+    font-size: 16px;
+    color: #ccc;
+    text-align: center;
+    max-width: 80%;
+    transition: opacity 0.3s ease;
+}
+
+/* Иконка в правом верхнем углу */
+.icon {
+    position: absolute;
+    width: 50px;          /* размер иконки */
+    top: 10px;            /* отступ сверху */
+    right: 10px;          /* отступ справа */
+    opacity: 0;           /* изначально скрыта */
+    transform: scale(0.5); /* начальный размер для анимации */
+    transition: all 0.4s ease;
+}
+
+/* Появление при наведении */
+.card:hover .icon {
+    opacity: 1;
+    transform: scale(1); /* увеличиваем до нормального размера */
+}
+
+
+/* Текст исчезает при ховере */
+.card:hover h1,
+.card:hover p {
+    opacity: 0.4;
+}
+
+/* Анимация движения градиента */
+@keyframes Borders {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.line {
+    backdrop-filter: blur(7.6px);
+    -webkit-backdrop-filter: blur(7.6px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 45%;
+    height: 100px;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.47);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.6px);
+    -webkit-backdrop-filter: blur(7.6px);
+    overflow: hidden;
+    transition: transform 2s ease, box-shadow 0.5 ease;
+}
+
+.Desc {
+    position: relative;
+    top: -20px;
+}
+
+.line {
+    transition: transform 0.5s ease;
+}
+
+.line:hover {
+    transform: rotate(4deg);
+}
+
+@keyframes pulseAnim {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); /* увеличиваем на 10% */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.More1 {
+    font-family: 'Monocraft';
+    backdrop-filter: blur(7.8px);
+    -webkit-backdrop-filter: blur(7.8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(46, 45, 45);
+    width: 45%;
+    height: 14%;
+    position: relative;
+    top: 130px;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+    border-radius: 10px;
+    animation: pulseAnim 1.5s linear infinite;
+}
+
+.More2 {
+    font-family: 'Monocraft';
+    backdrop-filter: blur(7.8px);
+    -webkit-backdrop-filter: blur(7.8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(46, 45, 45);
+    width: 45%;
+    height: 14%;
+    position: relative;
+    top: 130px;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+    border-radius: 10px;
+    animation: pulseAnim 1.5s linear infinite;
+}
+
+.More3 {
+    font-family: 'Monocraft';
+    backdrop-filter: blur(7.8px);
+    -webkit-backdrop-filter: blur(7.8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(46, 45, 45);
+    width: 45%;
+    height: 14%;
+    position: relative;
+    top: 130px;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+    border-radius: 10px;
+    animation: pulseAnim 1.5s linear infinite;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin-top: 20px;
+    background-color: #00bfff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #0099cc;
+    transform: scale(1.05);
+}
